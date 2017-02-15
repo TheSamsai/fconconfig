@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #  main.py
@@ -114,7 +114,10 @@ class Controller:
 		
 		# Shell script writing begins
 		fob.write("#!/bin/sh\n")
-		fob.write("rm /dev/input/js*\n")
+		# The part below has been commented out because doing changes like that
+		# to a foreign system is not polite. However, other js devices can cause
+		# problems with some games.
+		#fob.write("rm /dev/input/js*\n")
 		fob.write(command)
 		
 		fob.close()

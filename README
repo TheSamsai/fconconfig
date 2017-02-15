@@ -1,0 +1,51 @@
+	FConConfig
+	
+What is it, why is it?
+	FConConfig is a simple configuration wizard for gamepads on Linux.
+	Modern video games expect an Xbox 360 controller which can lead to
+	some gamepads to work in wonky ways, even if they provide a button
+	layout close to that of the 360 controller.
+	
+	There are ways to deal with this problem, one of them being emulating
+	the 360 controller by telling the xboxdrv user-mode driver which
+	buttons and axes mean which. This is an effective solution and can
+	make most gamepads that Linux somewhat understands work with basically
+	all gamepad-enabled games of today. However, the process is somewhat
+	annoying.
+	
+	FConConfig tries to make the process as streamlined as possible.
+	It asks the user for buttons to press, records the events it receives
+	from evdev and then creates a script with all the xboxdrv configurations
+	ready-made. All that is left for the user to do is to run the generated
+	script and start playing.
+	
+Installation and usage
+	FConConfig requires Python 3 and the Python bindings to evdev
+	installed. In addition, to make the program useful, you need the
+	xboxdrv userspace driver to actually use your controller.
+	
+	Python 3 is likely available through your distribution software
+	repository. The bindings to evdev can be installed with pip:
+	-	'pip install evdev'
+	
+	xboxdrv is also likely in your distribution software repository.
+	
+	Using FConConfig is easy. You need to execute the program in
+	terminal and the configuration wizard starts. You will be given
+	some instructions about which buttons to press and after all the
+	required inputs have been gathered, FConConfig will create a
+	file called 'xboxdrv.sh' in your current directory. This script
+	contains a command to run xboxdrv and the various configurations
+	that are needed by xboxdrv to correctly recognize and use your
+	controller. Running this script (as root, since that's an xboxdrv
+	requirement) should make your gamepad work just like you configured.
+	However, sometimes it will take a moment for xboxdrv to get start
+	working properly, give it a minute or two to "warm up".
+	
+	By now you should have your controller properly configured and
+	ready for action.
+	
+Bug reports and feedback
+	If you encounter bugs, make sure to post those on the Github page.
+	If the Github page is not available or you'd rather contact me
+	directly send a message to "thesamsai@gmail.com".
