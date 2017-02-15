@@ -1,0 +1,3 @@
+Python 3 (3.6.0 recommended, all of 3.x likely to work)
+evdev bindings to Python 3 (find them on 'pip')
+xboxdrv
